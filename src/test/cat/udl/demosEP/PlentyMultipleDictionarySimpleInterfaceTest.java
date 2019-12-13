@@ -2,15 +2,13 @@ package cat.udl.demosEP;
 
 import cat.udl.demosEP.exceptions.AlreadyDefinedException;
 import cat.udl.demosEP.exceptions.NotDefinedException;
+import cat.udl.demosEP.testInterfaces.MultipleDictionarySimpleFullInterfaceTest;
+import cat.udl.demosEP.testInterfaces.MultipleDictionarySimpleInterfaceTest;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import cat.udl.demosEP.exceptions.AlreadyDefinedException;
-import cat.udl.demosEP.exceptions.NotDefinedException;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;

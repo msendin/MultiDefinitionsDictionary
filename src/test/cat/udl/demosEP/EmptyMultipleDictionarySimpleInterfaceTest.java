@@ -2,19 +2,17 @@ package cat.udl.demosEP;
 
 import cat.udl.demosEP.exceptions.AlreadyDefinedException;
 import cat.udl.demosEP.exceptions.NotDefinedException;
+import cat.udl.demosEP.testInterfaces.MultipleDictionarySimpleInterfaceTest;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import cat.udl.demosEP.exceptions.AlreadyDefinedException;
-import cat.udl.demosEP.exceptions.NotDefinedException;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-public class EmptyMultipleDictionarySimpleInterfaceTest implements MultipleDictionarySimpleInterfaceTest  {
+public class EmptyMultipleDictionarySimpleInterfaceTest implements MultipleDictionarySimpleInterfaceTest {
 
     private DictionaryImpl dictionary;
 

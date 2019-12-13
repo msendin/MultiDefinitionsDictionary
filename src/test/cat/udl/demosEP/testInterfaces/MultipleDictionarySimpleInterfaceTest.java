@@ -1,4 +1,4 @@
-package cat.udl.demosEP;
+package cat.udl.demosEP.testInterfaces;
 
 import cat.udl.demosEP.exceptions.AlreadyDefinedException;
 import cat.udl.demosEP.exceptions.NotDefinedException;

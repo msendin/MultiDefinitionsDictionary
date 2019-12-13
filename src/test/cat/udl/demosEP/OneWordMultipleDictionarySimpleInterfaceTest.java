@@ -2,10 +2,10 @@ package cat.udl.demosEP;
 
 import cat.udl.demosEP.exceptions.AlreadyDefinedException;
 import cat.udl.demosEP.exceptions.NotDefinedException;
+import cat.udl.demosEP.testInterfaces.MultipleDictionarySimpleFullInterfaceTest;
+import cat.udl.demosEP.testInterfaces.MultipleDictionarySimpleInterfaceTest;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import cat.udl.demosEP.exceptions.*;
 
 
 import java.util.ArrayList;
