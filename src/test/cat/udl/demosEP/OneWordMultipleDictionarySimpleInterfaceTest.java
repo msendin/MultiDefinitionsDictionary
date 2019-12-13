@@ -16,10 +16,10 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class OneWordMultipleDictionarySimpleInterfaceTest implements MultipleDictionarySimpleInterfaceTest, MultipleDictionarySimpleFullInterfaceTest {
 
-    DictionaryImpl dictionary;
+    private DictionaryImpl dictionary;
 
     @BeforeEach
-    public void setUp() throws AlreadyDefinedException {
+    void setUp() throws AlreadyDefinedException {
         dictionary = new DictionaryImpl();
         dictionary.defineWord("Hardware", "Definición de Hardware");
     }
@@ -29,15 +29,13 @@ public class OneWordMultipleDictionarySimpleInterfaceTest implements MultipleDic
     @Test
     public void getExistentWordTest() {
         Throwable exception = assertThrows(AlreadyDefinedException.class,
-                () -> {
-                    dictionary.defineWord("Hardware", "Definición de Hardware");
-                });
+                () -> dictionary.defineWord("Hardware", "Definición de Hardware"));
     }
 
     @Override
     @Test
     public void defineWordTest() throws AlreadyDefinedException, NotDefinedException {
-        List<String> defs = new ArrayList<String>();
+        List<String> defs = new ArrayList<>();
         dictionary.defineWord("Sistema Operativo", "Definición de Sistema Operativo");
         defs.add("Definición de Sistema Operativo");
         assertEquals(defs, dictionary.getDefinitions("Sistema Operativo"));
@@ -47,9 +45,7 @@ public class OneWordMultipleDictionarySimpleInterfaceTest implements MultipleDic
     @Test
     public void getInexistentWordTest() {
         Throwable exception = assertThrows(NotDefinedException.class,
-                () -> {
-                    dictionary.getDefinitions("Framework");
-                });
+                () -> dictionary.getDefinitions("Framework"));
     }
 
     @Override

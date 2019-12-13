@@ -16,17 +16,17 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class EmptyMultipleDictionarySimpleInterfaceTest implements MultipleDictionarySimpleInterfaceTest  {
 
-    DictionaryImpl dictionary;
+    private DictionaryImpl dictionary;
 
     @BeforeEach
-    public void setUp() {
+    void setUp() {
         dictionary = new DictionaryImpl();
     }
 
     @Override
     @Test
     public void defineWordTest() throws AlreadyDefinedException, NotDefinedException {
-        List<String> defs = new ArrayList<String>();
+        List<String> defs = new ArrayList<>();
         dictionary.defineWord("Sistema Operativo", "Definición de Sistema Operativo");
         defs.add("Definición de Sistema Operativo");
         assertEquals(defs, dictionary.getDefinitions("Sistema Operativo"));
@@ -36,6 +36,6 @@ public class EmptyMultipleDictionarySimpleInterfaceTest implements MultipleDicti
     @Test
     public void getInexistentWordTest() {
         Throwable exception = assertThrows(NotDefinedException.class,
-                () -> { dictionary.getDefinitions("Middleware");});
+                () -> dictionary.getDefinitions("Middleware"));
     }
 }

@@ -20,10 +20,10 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class PlentyMultipleDictionarySimpleInterfaceTest implements MultipleDictionarySimpleInterfaceTest, MultipleDictionarySimpleFullInterfaceTest {
 
-    DictionaryImpl dictionary;
+    private DictionaryImpl dictionary;
 
     @BeforeEach
-    public void setUp() throws AlreadyDefinedException {
+    void setUp() throws AlreadyDefinedException {
         dictionary = new DictionaryImpl();
         dictionary.defineWord("Hardware", "Definición de Hardware");
         dictionary.defineWord("Software", "Definición de Software");
@@ -35,15 +35,13 @@ public class PlentyMultipleDictionarySimpleInterfaceTest implements MultipleDict
     @Test
     public void getInexistentWordTest() {
         Throwable exception = assertThrows(NotDefinedException.class,
-                () -> {
-                    dictionary.getDefinitions("Middleware");
-                });
+                () -> dictionary.getDefinitions("Middleware"));
     }
 
     @Override
     @Test
     public void defineWordTest() throws AlreadyDefinedException, NotDefinedException {
-        List<String> defs = new ArrayList<String>();
+        List<String> defs = new ArrayList<>();
         dictionary.defineWord("Sistema Operativo", "Definición de Sistema Operativo");
         defs.add("Definición de Sistema Operativo");
         assertEquals(defs, dictionary.getDefinitions("Sistema Operativo"));
@@ -53,9 +51,7 @@ public class PlentyMultipleDictionarySimpleInterfaceTest implements MultipleDict
     @Test
     public void getExistentWordTest() {
         Throwable exception = assertThrows(AlreadyDefinedException.class,
-                () -> {
-                    dictionary.defineWord("Hardware", "Definición de Hardware");
-                });
+                () -> dictionary.defineWord("Hardware", "Definición de Hardware"));
     }
 
     @Override
@@ -67,7 +63,7 @@ public class PlentyMultipleDictionarySimpleInterfaceTest implements MultipleDict
     }
 
     @Test
-    public void getMoreThanOneDefinitionTest() throws NotDefinedException{
+    void getMoreThanOneDefinitionTest() throws NotDefinedException{
         List<String> definitions = new ArrayList<>();
         definitions.add("Definición 1 de Licencia");
         definitions.add("Definición 2 de Licencia");
